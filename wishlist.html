@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wishlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- header -->
+        <header>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+            <ul class="navbar" id="navbar">
+                <li><a href="index.html">HOME </a></li>
+                <li><a href="quiz.html">QUIZ</a></li>
+                <li><a href="loveletter.html">LETTERS</a></li>
+                <li><a href="lovenotes.html">LOVE-NOTES </a> </li>
+                <li><a href="poems.html">PEOMS</a></li>
+                <li><a href="#" class="active">WISHLIST </a></li>
+                
+            </ul>
+        </header>
+        <!-- end of header -->
+        <div class="wish-main">
+            <div class="logo-container">
+                <div class="home-logo">
+                    <img src="/img/logo3.png" alt="rabe">
+                </div>
+            </div>
+            <div class="wish-container">
+                <form name="submit-to-google-sheet">
+                        <h2>Wish list</h2>
+                        <p>Add your wish of out future or something we should do as a couple </p>
+                        <textarea name="wish" placeholder="Enter your wishes"></textarea>
+                
+                        <h2>Changes</h2>
+                        <p>Any thing that we could change to better or relationship or anything we used to be that used to better our relationship but no long is to bring it back</p>
+                        <textarea name="changes" placeholder="Enter changes"></textarea>
+                      
+                    
+                    
+                        <h2>Questions</h2>
+                        <p>any questions you will like to ask my rose it could be any , don't be shy</p>
+                        <textarea name="question" placeholder="Enter questions"></textarea>
+
+
+                        <button type="submit" class="btn btn2">submit</button>
+                </form>
+                <span id="msg"></span>
+                
+            </div>
+        </div>
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyH4yW4gof3bH7XZDKjRwoBq0w6gzoMHLvYY8bLRMdNis3iozkuFOgPDmeczLq58lhipA/exec'
+            const form = document.forms['submit-to-google-sheet']
+
+            const msg =document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML =""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+</body>
+</html>

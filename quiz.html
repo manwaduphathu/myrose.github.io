@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main">
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="vid/v.mp4" type="video/mp4">
+        </video>
+    <!--  ******************* header ***************-->
+        <header>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+            <ul class="navbar" id="navbar">
+                <li><a href="index.html">HOME </a></li>
+                <li><a href="#" class="active">QUIZ</a></li>
+                <li><a href="loveletter.html">LETTERS</a></li>
+                <li><a href="lovenotes.html">LOVE-NOTES </a> </li>
+                <li><a href="poems.html">PEOMS</a></li>
+                <li><a href="wishlist.html">WISHLIST </a></li>
+                
+            </ul>
+        </header>
+        <!-- **************** end of header ************************** -->
+         <div class="container">
+
+            <section class="quiz-section">
+                <div class="quiz-box">
+                    <h1>Quiz</h1>
+                    <div class="quiz-header">
+                        <span>total score</span>
+                        <span class="header-score"><div id="result"></div></span>
+                    </div>
+
+                    <h2 id="question">Question text</h2>
+                    
+
+                    <ul id="options">
+                        <li>
+                            <label>
+                            <input type="radio" name="option" class="option" value="0">
+                            <span class="option-text"></span>
+                            
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="option" class="option" value="1">
+                            <span class="option-text"></span>
+                            
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="option" class="option" value="2">
+                            <span class="option-text"></span>
+                            
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="option" class="option" value="3">
+                            <span class="option-text"></span>
+                            
+                        </li>
+
+                    </ul>
+                    <div class="quiz-footer">
+                        <span class="question-total">17 questions</span>
+                        <button id="submit">Next</button>
+                    </div>
+
+                    
+                    <!--
+                    <h1>Quiz</h1>
+                    <div class="quiz-header">
+                        <span>quiz love</span>
+                        <span class="header-score">Score: 0/5</span>
+                    </div>
+
+                    <h2 class="question-text">what does html stand for?</h2>
+
+                    <div class="option-list">
+                        <div class="option">
+                            <span>A. htppppp</span>
+                        </div>
+                        <div class="option">
+                            <span>B. hdtdgg</span>
+                        </div>
+                        <div class="option">
+                            <span>C. hyper text markup language</span>
+                        </div>
+                        <div class="option">
+                            <span>D. hgjjgjghghg</span>
+                        </div> 
+                    </div>
+
+                    <div class="quiz-footer">
+                        <span class="question-total">1 of 5 Question</span>
+                        <button class="next-btn">Next</button>
+                    </div>-->
+                </div>
+
+                
+
+            </section>
+
+            <section class="home-quiz">
+                <div class="container-quiz">
+                    <h1>QUIZ</h1>
+                    <p>i created a quiz about me and you to test your knowledge about our relationship</p>
+                    <button class="start-btn">START</button>
+                </div>
+            </section>
+    
+
+         </div>
+        
+    </main> 
+        
+
+         <div class="popup-info">
+            <h2>quiz guide</h2>
+            <span class="info">answer all question</span>
+            <span class="info">bcs i did make backend i will need screenshot to see how much you got</span>
+            <span class="info">most of the question adzi dini ndi zwithu zwine rovhuya ra ita</span>
+            <span class="info">and the are some naughty question there</span>
+            <span class="info">i wana less than 10 you owe me a dare and ndi do mu itisa zwithu zwono vhavha</span>
+
+            <div class="btn-grp">
+                <button class="info-btn exit-btn">Exit Quiz</button>
+                <a href="#" class="info-btn continue-btn">Continue</a>
+            </div>
+        </div>
+
+        <script src="question.js"></script>
+        <script src="script.js"></script>
+</body>
+</html>

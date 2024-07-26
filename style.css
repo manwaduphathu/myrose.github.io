@@ -1,0 +1,649 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins' sans-serif;
+    
+}
+body {
+    background: #888888;
+    overflow: hidden;
+   
+}
+/* --------------------------------header style ------------------------ */
+header{
+   /* position: fixed;*/
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #383838;
+    
+}
+.logo{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.logo img{
+    width: 170px;
+    margin-left: 30px;
+}
+.navbar{
+    display: flex;
+    margin-right: 30px;
+}
+.navbar a{
+    font-size: 1.3rem;
+    padding: 11px 20px;
+    color: #89cff0;
+    font-weight: 600;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: rgb(240, 87, 87);
+}
+
+/* ---------------------------------------- home page stlye ----------------------*/
+.home-page{
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    gap: 1rem;
+}
+.home-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.home-text{
+    flex-basis: 60%;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.home-text video{
+    width: 100%;
+    height: 100%;
+}
+.home-text .text-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    mix-blend-mode: multiply;
+}
+.text-box span{
+    margin-left: 10px;
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+.home-image{
+    flex-basis: 35%;
+    margin-left: 30px;
+    padding-left: 20px;
+    
+
+}
+.home-image img{
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+
+}
+/*   ----------------------------------- style for quiz page  ---------------------------*/
+.main{
+    min-height: 100vh;
+    /*background: url('') no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    transition: .3s ease;
+    pointer-events: auto;
+    
+}
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+@media (min-aspect-ratio:16/9){
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+.main.active{
+    filter: blur(15px);
+    pointer-events: none;
+}
+.container{
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+.home-quiz{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-quiz{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.container-quiz h1{
+    font-size: 78px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+.container-quiz p{
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    margin-bottom: 30px;
+}
+.container-quiz .start-btn{
+    width: 190px;
+    height: 55px;
+    background: #c40094;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #c40094;
+    font-size: 10px;
+    color: #fff;
+    letter-spacing: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .5s;
+}
+.container-quiz .start-btn:hover{
+    background: #000;
+    box-shadow: none;
+}
+.popup-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3 ease;
+}
+.popup-info.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup-info h2{
+    font-size: 50px;
+    color: #c40094;
+    text-align: center;
+}
+.popup-info .info{
+    display: block;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin: 4px 0;
+    text-align: center;
+    
+}
+.popup-info .btn-grp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+.popup-info .btn-grp .info-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: #c40094;
+    border: 2px solid #c40094;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    transition: .5s;
+}
+.popup-info .btn-grp .info-btn:nth-child(1){
+    background: transparent;
+    color: #c40094;
+}
+.popup-info .btn-grp .info-btn:nth-child(1):hover{
+    background: #c40094;
+    color: #fff;
+}
+.popup-info .btn-grp .info-btn:nth-child(2):hover{
+    background: #c40094;
+    border-color: #950170;
+}
+.quiz-section{
+    position: relative;
+    left: -50%;
+    /*left: 0;*/
+    width: 100%;
+    background: #09001d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;
+    z-index: 100;
+    color: #fff;
+}
+.quiz-section.active{
+    left: 0;
+}
+.quiz-section .quiz-box{
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid #c40094;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+}
+.quiz-section .quiz-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+.quiz-box h1{
+    font-size: 32px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, #c40094, transparent);
+    border-radius: 6px;
+}
+.quiz-box .quiz-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #c40094;
+    margin-bottom: 10px;
+}
+.quiz-header span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.quiz-header .header-score{
+    background: #c40094;
+    border-radius: 3px;
+    padding: 7px;
+}
+.quiz-box .question-text{
+    font-size: 24px;
+    font-weight: 600;
+}
+#options li{
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 4px;
+    font-size: 17px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+#options li:hover{
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+.quiz-box .quiz-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #c40094;
+    padding: 5px;
+    margin-top: 5px;
+}
+.quiz-footer .question-total{
+    font-size: 16px;
+    font-weight: 600;
+}
+.quiz-footer #submit{
+    width: 100px;
+    height: 45px;
+    background: rgba(255, 255, 255, .1);
+    border: rgba(255, 255, 255, .1);
+    outline: none;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, .3);
+    font-weight: 600;
+    cursor: pointer;
+   /* pointer-events: none;*/
+    transition: .5s;
+}
+.quiz-footer #submit:hover{
+    background: #c40094;
+    border-color: #c40094;
+}
+/* ------------------------------------ style for letter page ---------------------*/
+.letter-container {
+    display: flex;
+    flex-direction: column; /* Adjust to row for horizontal layout */
+    align-items: center;
+    padding: 20px;
+}
+.letter-container  h1{
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+}
+.letter-container .letters{
+    display: flex; /* For horizontal layout */
+    flex-wrap: wrap; /* Allow letters to wrap to next row */
+    justify-content: space-around; /* Adjust spacing between letters */
+   /* align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap:40px;
+    margin: 5px 0 0 140px;
+    padding: 5px 0 0 30px; */
+}
+.letter {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 350px; /* Adjust width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.letter h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.pdf{
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+}
+
+
+/*    love notes section */
+.sub-title{
+    text-align: center;
+}
+.love-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-gap: 20px; /* Spacing between boxes */
+    margin: 20px 0;
+}
+.love-note {
+    background-color: #262626;
+    padding: 15px;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text alignment */
+    transition: background 0.5s, transform 0.5s;
+}
+.love-note p {
+    font-size: 1.1rem;
+    line-height: 1.5; /* Adjust line height for better readability */
+    color: #89cff0;
+}
+.love-note:hover{
+    background: #c40094;
+    transform: translateY(-10px);
+}
+
+/* ---------------------------- style for poem page ---------------------- */
+.home-poem{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.contain-poem{
+    position: relative;
+    width: 550px;
+    background: transparent;
+    border: 2px solid #c40094;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    
+}
+.contain-poem h1{
+    margin: 2px 0 10px 5px;
+    padding: 5px 0 5px 10px;
+    text-decoration: underline;
+    color: #950170;
+    font-size: 50px;
+    font-weight: 200;
+}
+.contain-poem p{
+    margin: 0 0 10px 0;
+    padding: 5px 0 5px 0;
+    color: #c40094;
+    font-size: 20px;
+    font-size: 100;
+}
+.download-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    margin-top: 1px;
+    padding: 1px 0 5px;
+}  
+.vid-btn,
+.pdf-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: #c40094;
+    border: 2px solid #c40094;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #89cff0;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    transition: .5s;
+}
+/* ------------------------------- wishlist page -------------------  */
+.wish-main {
+    display: flex;
+    flex-grow: 1; /* Make this container take up all available space */
+    display: flex;
+    min-height: 100vh;
+}
+
+.logo-container {
+    flex: 0 0 300px; /* Fixed width of 300px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wish-container {
+    flex: 1;
+    padding: 20px;
+}
+form input, form textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.wish-section {
+    margin-bottom: 20px;
+}
+
+.wish-section h2 {
+    color: #c40094;
+}
+
+.wish-section p {
+    color: #999;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 15px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #c40094;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+#msg{
+    color: #f7e602;
+    display: block;
+    margin-top: -80px;
+    font-size: 30px;
+}
+/************************************* style for small device ****************/
+@media only screen and (max-width: 600px){
+    header{
+        /* position: fixed;*/
+         width: 100%;
+         height: 10vh;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         background: #383838;
+         
+     }
+     .logo{
+         display: flex;
+         align-items: center;
+         margin-left: 30px;
+     }
+     .logo img{
+         width: 150px;
+         margin-left: 10px;
+     }
+     .navbar{
+         display: flex;
+         margin-right: 10px;
+     }
+     .navbar a{
+         font-size: 1rem;
+         padding: 5px 10px;
+         color: #89cff0;
+         font-weight: 300;
+     }
+     .navbar a:hover,
+     .navbar a.active{
+         color: rgb(240, 87, 87);
+     }
+
+   /******************** home page ***************/
+   .home-page{
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    gap: 1rem;
+}
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-text{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.home-text video{
+    width: 100%;
+    height: 100%;
+}
+.home-text .text-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    mix-blend-mode: multiply;
+}
+.text-box span{
+    margin-left: 10px;
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+.home-image{
+    margin-left: 30px;
+    padding-left: 20px;
+    
+
+}
+.home-image img{
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+
+}
+}
